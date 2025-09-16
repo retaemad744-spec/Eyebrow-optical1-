@@ -1,0 +1,253 @@
+import { useState } from "react";
+import { Button } from "/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "/components/ui/card";
+import { Input } from "/components/ui/input";
+import { Label } from "/components/ui/label";
+
+const GlassesStore = () => {
+  const [email, setEmail] = useState("");
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-16 items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded-full bg-primary"></div>
+            <span className="text-xl font-bold">عيون</span>
+          </div>
+          
+          <nav className="hidden md:flex gap-6">
+            <a href="#home" className="text-sm font-medium hover:text-primary">الرئيسية</a>
+            <a href="#products" className="text-sm font-medium hover:text-primary">النظارات</a>
+            <a href="#offers" className="text-sm font-medium hover:text-primary">العروض</a>
+            <a href="#about" className="text-sm font-medium hover:text-primary">من نحن</a>
+          </nav>
+          
+          <Button variant="outline" size="sm">تسجيل الدخول</Button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section id="home" className="container py-12 md:py-24">
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+          <div className="flex flex-col justify-center space-y-4">
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                اكتشف مجموعة النظارات الخاصة بنا
+              </h1>
+              <p className="text-muted-foreground md:text-xl">
+                نظارات عصرية وأنيقة تناسب كل مناسبة. جودة عالية وتصميم متميز يليق بك.
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Button size="lg">تسوق الآن</Button>
+              <Button variant="outline" size="lg">المجموعة الكاملة</Button>
+            </div>
+          </div>
+          <div className="flex items-center justify-center">
+            <img
+              src="https://placeholder-image-service.onrender.com/image/600x400?prompt=Fashionable%20person%20wearing%20stylish%20glasses%20with%20modern%20design%20and%20clean%20background&id=96f07775-b08b-426e-a125-edf8f3687899"
+              alt="شخص أنيق يرتدي نظارات عصرية ذات تصميم حديث على خلفية نظيفة"
+              className="rounded-xl shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Products */}
+      <section id="products" className="container py-12">
+        <div className="space-y-4 text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">أحدث النظارات</h2>
+          <p className="text-muted-foreground md:text-xl">
+            اكتشف مجموعتنا المميزة من النظارات العصرية
+          </p>
+        </div>
+        
+        <div className="grid gap-6 mt-8 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Product 1 */}
+          <Card className="overflow-hidden">
+            <div className="aspect-square overflow-hidden">
+              <img
+                src="https://placeholder-image-service.onrender.com/image/400x400?prompt=Modern%20black%20glasses%20with%20thin%20metal%20frame%20on%20white%20background&id=96f07775-b08b-426e-a125-edf8f3687899"
+                alt="نظارات سوداء حديثة بإطار معدني رقيق على خلفية بيضاء"
+                className="h-full w-full object-cover transition-all hover:scale-105"
+              />
+            </div>
+            <CardHeader>
+              <CardTitle>نظارات كلاسيكية سوداء</CardTitle>
+              <CardDescription>إطار معدني رقيق - تصميم أنيق</CardDescription>
+            </CardHeader>
+            <CardFooter>
+              <Button className="w-full">إضافة إلى السلة - 199 ر.س</Button>
+            </CardFooter>
+          </Card>
+
+          {/* Product 2 */}
+          <Card className="overflow-hidden">
+            <div className="aspect-square overflow-hidden">
+              <img
+                src="https://placeholder-image-service.onrender.com/image/400x400?prompt=Stylish%20tortoiseshell%20glasses%20with%20thick%20frames%20on%20minimal%20background&id=96f07775-b08b-426e-a125-edf8f3687899"
+                alt="نظارات أنيقة بلون صدف السلحفاة بإطار سميك على خلفية بسيطة"
+                className="h-full w-full object-cover transition-all hover:scale-105"
+              />
+            </div>
+            <CardHeader>
+              <CardTitle>نظارات صدف السلحفاة</CardTitle>
+              <CardDescription>إطار سميك - تصميم عصري</CardDescription>
+            </CardHeader>
+            <CardFooter>
+              <Button className="w-full">إضافة إلى السلة - 249 ر.س</Button>
+            </CardFooter>
+          </Card>
+
+          {/* Product 3 */}
+          <Card className="overflow-hidden">
+            <div className="aspect-square overflow-hidden">
+              <img
+                src="https://placeholder-image-service.onrender.com/image/400x400?prompt=Elegant%20gold%20glasses%20with%20delicate%20details%20on%20luxury%20background&id=96f07775-b08b-426e-a125-edf8f3687899"
+                alt="نظارات ذهبية أنيقة بتفاصيل دقيقة على خلفية فاخرة"
+                className="h-full w-full object-cover transition-all hover:scale-105"
+              />
+            </div>
+            <CardHeader>
+              <CardTitle>نظارات ذهبية فاخرة</CardTitle>
+              <CardDescription>إطار ذهبي - تصميم متطور</CardDescription>
+            </CardHeader>
+            <CardFooter>
+              <Button className="w-full">إضافة إلى السلة - 349 ر.س</Button>
+            </CardFooter>
+          </Card>
+
+          {/* Product 4 */}
+          <Card className="overflow-hidden">
+            <div className="aspect-square overflow-hidden">
+              <img
+                src="https://placeholder-image-service.onrender.com/image/400x400?prompt=Sporty%20blue%20glasses%20with%20wrap-around%20design%20for%20active%20lifestyle&id=96f07775-b08b-426e-a125-edf8f3687899"
+                alt="نظارات رياضية زرقاء بتصميم ملفوف لنمط حياة نشط"
+                className="h-full w-full object-cover transition-all hover:scale-105"
+              />
+            </div>
+            <CardHeader>
+              <CardTitle>نظارات رياضية زرقاء</CardTitle>
+              <CardDescription>مقاومة للصدمات - للألعاب الرياضية</CardDescription>
+            </CardHeader>
+            <CardFooter>
+              <Button className="w-full">إضافة إلى السلة - 299 ر.س</Button>
+            </CardFooter>
+          </Card>
+        </div>
+      </section>
+
+      {/* Special Offers */}
+      <section id="offers" className="bg-muted py-12">
+        <div className="container">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+            <div className="flex flex-col justify-center space-y-4">
+              <div className="space-y-2">
+                <span className="rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+                  عرض خاص
+                </span>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  احصل على ثاني نظارة بنصف السعر
+                </h2>
+                <p className="text-muted-foreground md:text-xl">
+                  استفد من عرضنا الخاص لمدة محدودة. اختر نظارتك المفضلة واحصل على الثانية بنصف السعر.
+                </p>
+              </div>
+              <Button size="lg" className="w-fit">استفد من العرض</Button>
+            </div>
+            <div className="flex items-center justify-center">
+              <img
+                src="https://placeholder-image-service.onrender.com/image/600x400?prompt=Two%20pairs%20of%20stylish%20glasses%20displayed%20together%20with%20special%20offer%20tag&id=96f07775-b08b-426e-a125-edf8f3687899"
+                alt="زوجان من النظارات الأنيقة معروضان معاً مع بطاقة عرض خاص"
+                className="rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="container py-12">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+            اشترك في نشرتنا الإخبارية
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            كن أول من يعرف عن العروض الجديدة والمجموعات الحصرية
+          </p>
+          <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+            <Input
+              type="email"
+              placeholder="بريدك الإلكتروني"
+              className="flex-1"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <Button>اشتراك</Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-border bg-background">
+        <div className="container py-12">
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <div className="h-8 w-8 rounded-full bg-primary"></div>
+                <span className="text-xl font-bold">عيون</span>
+              </div>
+              <p className="text-muted-foreground">
+                متجرنا يقدم أفضل النظارات بجودة عالية وتصاميم عصرية تناسب جميع الأذواق.
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="font-semibold">المتجر</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><a href="#" className="hover:text-primary">جميع النظارات</a></li>
+                <li><a href="#" className="hover:text-primary">نظارات رجالية</a></li>
+                <li><a href="#" className="hover:text-primary">نظارات نسائية</a></li>
+                <li><a href="#" className="hover:text-primary">نظارات رياضية</a></li>
+              </ul>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="font-semibold">معلومات</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><a href="#" className="hover:text-primary">عن المتجر</a></li>
+                <li><a href="#" className="hover:text-primary">الشحن والتوصيل</a></li>
+                <li><a href="#" className="hover:text-primary">الأسئلة الشائعة</a></li>
+                <li><a href="#" className="hover:text-primary">اتصل بنا</a></li>
+              </ul>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="font-semibold">وسائل التواصل</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>الرياض، المملكة العربية السعودية</li>
+                <li>info@uyoon.com</li>
+                <li>+966 12 345 6789</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="mt-12 border-t border-border pt-8 text-center text-muted-foreground">
+            <p>© 2024 عيون. جميع الحقوق محفوظة.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default GlassesStore;
